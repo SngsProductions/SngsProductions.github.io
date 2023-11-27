@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Tabla de Resultados</title>
+    <style>
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+   
+    
+
+    <h2>Tabla de Resultados</h2>
+    <table>
+        <tr>
+            <td>Estado de ánimo</td>
+            <td id="animoResultado"></td>
+        </tr>
+        <tr>
+            <td>Apatía</td>
+            <td id="apatiaResultado"></td>
+        </tr>
+        <tr>
+            <td>Autodevaluación</td>
+            <td id="autodevaluacionResultado"></td>
+        </tr>
+        <tr>
+            <td>Psicálgia</td>
+            <td id="psicalgiaResultado"></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>Pregunta</th>
+            <th>Resultado</th>
+        </tr>
+        <tr>
+            <td>Sexo </td>
+            <td id="filtro1Resultado"></td>
+        </tr>
+        <tr>
+            <td>Intentos </td>
+            <td id="filtro2Resultado"></td>
+        </tr>
+        <tr>
+            <td>Estrato </td>
+            <td id="filtro3Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 1</td>
+            <td id="pregunta1Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 2</td>
+            <td id="pregunta2Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 3</td>
+            <td id="pregunta3Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 4</td>
+            <td id="pregunta4Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 5</td>
+            <td id="pregunta5Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 6</td>
+            <td id="pregunta6Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 7</td>
+            <td id="pregunta7Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 8</td>
+            <td id="pregunta8Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 9</td>
+            <td id="pregunta9Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 10</td>
+            <td id="pregunta10Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 11</td>
+            <td id="pregunta11Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 12</td>
+            <td id="pregunta12Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 13</td>
+            <td id="pregunta13Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 14</td>
+            <td id="pregunta14Resultado"></td>
+        </tr>
+        <tr>
+            <td>Pregunta 15</td>
+            <td id="pregunta15Resultado"></td>
+        </tr>
+    </table>
+
+    <button id="printButton" onclick="imprimirPagina()">Imprimir Página</button>
+                
+
+    
+
+    <script>
+
+
+function imprimirPagina() {
+        window.print();
+    }
+
+        var filtro1 = parseFloat(localStorage.getItem('filtro1'));
+        var filtro2 = parseFloat(localStorage.getItem('filtro2'));
+        var filtro3 = parseFloat(localStorage.getItem('filtro3'));
+        var pregunta1 = parseFloat(localStorage.getItem('pregunta1'));
+        var pregunta2 = parseFloat(localStorage.getItem('pregunta2'));
+        var pregunta3 = parseFloat(localStorage.getItem('pregunta3'));
+        var pregunta4 = parseFloat(localStorage.getItem('pregunta4'));
+        var pregunta5 = parseFloat(localStorage.getItem('pregunta5'));
+        var pregunta6 = parseFloat(localStorage.getItem('pregunta6'));
+        var pregunta7 = parseFloat(localStorage.getItem('pregunta7'));
+        var pregunta8 = parseFloat(localStorage.getItem('pregunta8'));
+        var pregunta9 = parseFloat(localStorage.getItem('pregunta9'));
+        var pregunta10 = parseFloat(localStorage.getItem('pregunta10'));
+        var pregunta11 = parseFloat(localStorage.getItem('pregunta11'));
+        var pregunta12 = parseFloat(localStorage.getItem('pregunta12'));
+        var pregunta13 = parseFloat(localStorage.getItem('pregunta13'));
+        var pregunta14 = parseFloat(localStorage.getItem('pregunta14'));
+        var pregunta15 = parseFloat(localStorage.getItem('pregunta15'));
+
+        var e_animo = parseFloat(localStorage.getItem('animo'));
+        var psicalgia = parseFloat(localStorage.getItem('psicalgia'));
+        var apatia = parseFloat(localStorage.getItem('apatia'));
+        var autodevaluacion = parseFloat(localStorage.getItem('autodevaluacion'));
+
+
+     
+
+        document.getElementById("filtro1Resultado").innerText = filtro1;
+        document.getElementById("filtro2Resultado").innerText = filtro2;
+        document.getElementById("filtro3Resultado").innerText = filtro3;
+        document.getElementById("pregunta1Resultado").innerText = pregunta1;
+        document.getElementById("pregunta2Resultado").innerText = pregunta2;
+        document.getElementById("pregunta3Resultado").innerText = pregunta3;
+        document.getElementById("pregunta4Resultado").innerText = pregunta4;
+        document.getElementById("pregunta5Resultado").innerText = pregunta5;
+        document.getElementById("pregunta6Resultado").innerText = pregunta6;
+        document.getElementById("pregunta7Resultado").innerText = pregunta7;
+        document.getElementById("pregunta8Resultado").innerText = pregunta8;
+        document.getElementById("pregunta9Resultado").innerText = pregunta9;
+        document.getElementById("pregunta10Resultado").innerText = pregunta10;
+        document.getElementById("pregunta11Resultado").innerText = pregunta11;
+        document.getElementById("pregunta12Resultado").innerText = pregunta12;
+        document.getElementById("pregunta13Resultado").innerText = pregunta13;
+        document.getElementById("pregunta14Resultado").innerText = pregunta14;
+        document.getElementById("pregunta15Resultado").innerText = pregunta15;
+        document.getElementById("animoResultado").innerText = e_animo;
+        document.getElementById("apatiaResultado").innerText = apatia;
+        document.getElementById("autodevaluacionResultado").innerText = autodevaluacion;
+        document.getElementById("psicalgiaResultado").innerText = psicalgia;
+
+
+
+    </script>
+
+</body>
+
+</html>

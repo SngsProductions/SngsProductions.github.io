@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>MENTAL INFO </title>
+</head>
+
+<body>
+
+    <div class="cuestionario" id="cuestionario">
+
+        <div class="question-container">
+
+            <form>
+                <h1>
+                    <center>¿Ha tentado alguna vez con su vida?</center>
+                </h1>
+                <br>
+                <br>
+                <div class="option">
+                    <input type="radio" id="opcion1" name="opciones" value="1">
+                    <label for="opcion1">Nunca</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" id="opcion2" name="opciones" value="2,5">
+                    <label for="opcion2">Una vez</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="opcion3" name="opciones" value="5">
+                    <label for="opcion2">Más de una vez</label>
+                </div>
+
+                <br>
+                <a class="siguiente" id="filtro2" href = 'Filtro3.html' onclick="return validateForm()"><span class="text">Siguiente</span></a>
+
+            </form>
+
+        </div>
+
+    </div>
+    
+    <script>
+     function validateForm() {
+    var radios = document.getElementsByName("opciones");
+    var formValid = false;
+
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            formValid = true;
+            break;
+        }
+    }
+
+    if (!formValid) {
+        alert("Por favor, seleccione una opción.");
+        return false;
+    }
+
+    var puntos = document.querySelector('input[name="opciones"]:checked').value;
+    localStorage.setItem('filtro2', puntos);
+
+    return true;
+}
+      </script>
+
+</body>
+
+</html>

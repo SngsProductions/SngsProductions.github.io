@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>MENTAL INFO </title>
+</head>
+
+<body>
+
+    <div class="cuestionario" id="cuestionario">
+
+        <div class="question-container">
+<style>
+        /* Agrega estilos de cuadrícula */
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+
+        /* Ajusta estilos del botón para que ocupe toda la fila */
+        #aceptarButton {
+            grid-column: 1 / span 2;
+        }
+
+        /* Ajusta el estilo del textarea */
+        textarea {
+            width: 80%;
+            height: 50px; /* Ajusta la altura según sea necesario */
+            resize: vertical; /* Permite la redimensión vertical */
+            overflow-y: scroll; /* Agrega una barra de desplazamiento vertical */
+            text-align: justify;
+        }
+    </style>
+            <form>
+                <h1>
+					
+                    <center><img  id="resultadoImagen"  alt="Info Mental Image" style="top:-50px; width: 150%; position: relative; height:200px ; max-width: 100px; margin-bottom: 10px;"></center>	
+                  
+                    <center>Tu resultado es:</center>
+                </h1>
+                <br>
+                
+                <div class="option"></div>
+                <p id="resultado" style="width: 300px">
+
+                </p>
+                </div>
+
+                
+
+                <br>
+                <br>
+
+                <a class="siguiente" id="filtro1" href = 'tabla.html'><span class="text">Siguiente</span></a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+<script>
+var filtro1 = parseFloat(localStorage.getItem('filtro1'));
+var filtro2 = parseFloat(localStorage.getItem('filtro2'));
+var filtro3 = parseFloat(localStorage.getItem('filtro3'));
+var pregunta1 = parseFloat(localStorage.getItem('pregunta1'));
+var pregunta2 = parseFloat(localStorage.getItem('pregunta2'));
+var pregunta3 = parseFloat(localStorage.getItem('pregunta3'));
+var pregunta4 = parseFloat(localStorage.getItem('pregunta4'));
+var pregunta5 = parseFloat(localStorage.getItem('pregunta5'));
+var pregunta6 = parseFloat(localStorage.getItem('pregunta6'));
+var pregunta7 = parseFloat(localStorage.getItem('pregunta7'));
+var pregunta8 = parseFloat(localStorage.getItem('pregunta8'));
+var pregunta9 = parseFloat(localStorage.getItem('pregunta9'));
+var pregunta10 = parseFloat(localStorage.getItem('pregunta10'));
+var pregunta11 = parseFloat(localStorage.getItem('pregunta11'));
+var pregunta12 = parseFloat(localStorage.getItem('pregunta12'));
+var pregunta13 = parseFloat(localStorage.getItem('pregunta13'));
+var pregunta14 = parseFloat(localStorage.getItem('pregunta14'));
+var pregunta15 = parseFloat(localStorage.getItem('pregunta15'));
+
+
+
+felicidad = ((pregunta1 * 2.5) + (pregunta2 * 2.5) + (pregunta3 * 5) + (pregunta4 * 5)) / 4;
+e_animo = felicidad / 10;
+
+psicalgia = ((pregunta5 * 2.5) + (pregunta6 * 2.5) + (pregunta7 * 2.5) + (pregunta8 * 10) + (pregunta9 * 10) + (pregunta10 * 10) / 6);
+psicalgia = psicalgia / 10;
+psicalgia = psicalgia / 3;
+
+apatia = ((pregunta11 * 10) + (pregunta12 * 10)) / 2;
+apatia = apatia / 2;
+
+// Ajustar apatia a 0.1 si es igual a 0
+if (apatia === 0) {
+    apatia = 0.1;
+}
+
+autodevaluacion = ((pregunta13 * 10) + (pregunta14 * 10)) / 2;
+autodevaluacion = autodevaluacion / 2;
+
+
+
+
+
+// Ajustar autodevaluacion a 0.1 si es igual a 0
+if (autodevaluacion < 0.5) {
+    autodevaluacion = 0.1;
+} else if (autodevaluacion === 0.5) {
+    autodevaluacion = 0.5;
+} else if (autodevaluacion >0.5) {
+    autodevaluacion = 1;
+}else {
+    autodevaluacion = 1;
+}
+
+// Ajustar e_animo a 0.1, 0.5 o 1
+if (e_animo < 0.5) {
+    e_animo = 0.1;
+} else if (e_animo === 0.5) {
+    e_animo = 0.5;
+} else if (e_animo >0.5) {
+    e_animo = 1;
+}else {
+    e_animo = 1;
+}
+
+// Ajustar psicalgia a 0.1, 0.5 o 1
+if (psicalgia < 0.5) {
+    psicalgia = 0.1;
+} else if (psicalgia === 0.5) {
+    psicalgia = 0.5;
+} else if (psicalgia >0.5) {
+    psicalgia = 1;
+} else {
+    psicalgia = 1;
+}
+
+// Ajustar apatia a 0.1, 0.5 o 1
+if (apatia < 0.5) {
+    apatia = 0.1;
+} else if (apatia === 0.5) {
+    apatia = 0.5;
+}    else if (apatia > 0.5) {
+    apatia = 1;
+} else {
+    apatia = 1;
+}
+
+// Ajustar autodevaluacion a 0.1, 0.5 o 1
+if (autodevaluacion < 0.5) {
+    autodevaluacion = 0.1;
+} else if (autodevaluacion < 0.5) {
+    autodevaluacion = 0.5;
+} else {
+    autodevaluacion = 1;
+}
+
+localStorage.setItem('animo', e_animo);
+localStorage.setItem('psicalgia', psicalgia);
+localStorage.setItem('apatia', apatia);
+localStorage.setItem('autodevaluacion', autodevaluacion);
+
+
+
+
+
+var resultado=(filtro1+((filtro2 * filtro3))+((apatia*autodevaluacion)+(e_animo*psicalgia)));
+var resultadoImagen = document.getElementById("resultadoImagen");
+
+
+
+if (filtro2 === 1) {
+    if (resultado < 3) {
+        document.getElementById("resultado").innerText = "Su riesgo es bajo - bajo " + resultado + " No te preocupes, estás bastante sano";
+        resultadoImagen.src = "imagen1.PNG";
+        document.getElementById("imagen").src = resultadoImagen.src;
+    } else if (resultado > 3 && resultado < 5) {
+        resultadoImagen.src = "imagen2.PNG";
+        document.getElementById("imagen").src = resultadoImagen.src;
+        document.getElementById("resultado").innerText = "Su riesgo es bajo - medio " + resultado + " Te recomendamos consultar con tu Psicólogo";
+    } else {
+        document.getElementById("resultado").innerText = "Su riesgo es bajo - alto " + resultado + " Recuerda que todo tiene solución, la vida es bella";
+        resultadoImagen.src = "imagen3.PNG";
+        document.getElementById("imagen").src = resultadoImagen.src;
+    }
+} else if (filtro2 > 1 && filtro2 < 3) {
+    if (resultado < 3) {
+        document.getElementById("resultado").innerText = "Su riesgo es medio - bajo " + resultado + " No te preocupes, estás bastante sano";
+        resultadoImagen.src = "imagen1.PNG";
+        document.getElementById("imagen").src = resultadoImagen.src;
+    } else if (resultado > 3 && resultado < 5) {
+        resultadoImagen.src = "imagen2.PNG";
+        document.getElementById("imagen").src = resultadoImagen.src;
+        document.getElementById("resultado").innerText = "Su riesgo es medio - medio " + resultado + " Te recomendamos consultar con tu Psicólogo";
+    } else {
+        document.getElementById("resultado").innerText = "Su riesgo es medio - alto " + resultado + " Recuerda que todo tiene solución, la vida es bella";
+        resultadoImagen.src = "imagen3.PNG";
+        document.getElementById("imagen").src = resultadoImagen.src;
+    }
+} else if (filtro2 > 3) {
+    if (resultado < 3) {
+        document.getElementById("resultado").innerText = "Su riesgo es alto - bajo " + resultado + " No te preocupes, estás bastante sano";
+        resultadoImagen.src = "imagen1.PNG";
+        document.getElementById("imagen").src = resultadoImagen.src;
+    } else if (resultado > 3 && resultado < 5) {
+        resultadoImagen.src = "imagen2.PNG";
+        document.getElementById("imagen").src = resultadoImagen.src;
+        document.getElementById("resultado").innerText = "Su riesgo es alto - medio " + resultado + " Te recomendamos consultar con tu Psicólogo";
+    } else {
+        document.getElementById("resultado").innerText = "Su riesgo es alto - alto " + resultado + " Recuerda que todo tiene solución, la vida es bella";
+        resultadoImagen.src = "imagen3.PNG";
+        document.getElementById("imagen").src = resultadoImagen.src;
+    }
+
+    document.getElementById("resultado").innerText = resultadoTexto;
+}
+
+
+</script>
+
+
+
+
+</html>

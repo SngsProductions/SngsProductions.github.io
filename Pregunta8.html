@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>MENTAL INFO </title>
+</head>
+
+<body>
+
+    <div class="cuestionario" id="cuestionario">
+
+        <div class="question-container">
+
+            <form>
+                <h1>
+                    <center>¿Con que frecuencia a tenido inconvenientes</center>
+                </h1>
+                <br>
+                <h1>
+                    <center>o peleas con sus padres? </center>
+                </h1>
+                <br>
+                <br>
+                <div class="option">
+                    <input type="radio" id="opcion1" name="opciones" value="1">
+                    <label for="opcion1">Siempre</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" id="opcion2" name="opciones" value="0,5">
+                    <label for="opcion2">Rara vez</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="opcion2" name="opciones" value="0.1">
+                    <label for="opcion2">Nunca</label>
+                </div>
+
+                <br>
+                <a class="siguiente" id="filtro1" href = 'Pregunta9.html' onclick="return validateForm()"><span class="text">Siguiente</span></a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        function validateForm() {
+    var radios = document.getElementsByName("opciones");
+    var formValid = false;
+
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            formValid = true;
+            break;
+        }
+    }
+
+    if (!formValid) {
+        alert("Por favor, seleccione una opción.");
+        return false;
+    }
+
+    var puntos = parseFloat(radios[i].value);
+    localStorage.setItem('pregunta8', puntos);
+
+    return true;
+}
+      </script>
+
+</body>
+
+</html>
