@@ -145,6 +145,11 @@ function imprimirPagina() {
         var filtro1 = parseFloat(localStorage.getItem('filtro1'));
         var filtro2 = parseFloat(localStorage.getItem('filtro2'));
         var filtro3 = parseFloat(localStorage.getItem('filtro3'));
+        
+        if(filtro2 === 2){
+            filtro2=2.5;
+        }
+        
         var pregunta1 = parseFloat(localStorage.getItem('pregunta1'));
         var pregunta2 = parseFloat(localStorage.getItem('pregunta2'));
         var pregunta3 = parseFloat(localStorage.getItem('pregunta3'));
@@ -160,6 +165,9 @@ function imprimirPagina() {
         var pregunta13 = parseFloat(localStorage.getItem('pregunta13'));
         var pregunta14 = parseFloat(localStorage.getItem('pregunta14'));
         var pregunta15 = parseFloat(localStorage.getItem('pregunta15'));
+
+        
+        
 
         var e_animo = parseFloat(localStorage.getItem('animo'));
         var psicalgia = parseFloat(localStorage.getItem('psicalgia'));
