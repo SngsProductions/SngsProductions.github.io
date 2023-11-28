@@ -197,10 +197,9 @@ if (filtro2 === 1) {
         resultadoImagen.src = "imagen1.PNG";
         document.getElementById("imagen").src = resultadoImagen.src;
     } else if (resultado > 3 && resultado < 5) {
+        document.getElementById("resultado").innerText = "Su riesgo es medio - medio " + resultado + " Te recomendamos consultar con tu Psicólogo";
         resultadoImagen.src = "imagen2.PNG";
         document.getElementById("imagen").src = resultadoImagen.src;
-        document.getElementById("resultado").innerText = "Su riesgo es medio - medio " + resultado + " Te recomendamos consultar con tu Psicólogo";
-	document.getElementById("imagen").src = resultadoImagen.src;
     } else {
         document.getElementById("resultado").innerText = "Su riesgo es medio - alto " + resultado + " Recuerda que todo tiene solución, la vida es bella";
         resultadoImagen.src = "imagen3.PNG";
@@ -223,7 +222,6 @@ if (filtro2 === 1) {
 
     document.getElementById("resultado").innerText = resultadoTexto;
 }
-
 
 </script>
 
