@@ -195,11 +195,11 @@ if (filtro2 === 1) {
         document.getElementById("imagen").src = resultadoImagen.src;
     }
 } else if (filtro2 > 1 && filtro2 < 3) {
-    if (resultado < 3) {
+    if (resultado < 1.5) {
         document.getElementById("resultado").innerText = "Su riesgo es medio - bajo " + resultado + " No te preocupes, estás bastante sano";
         resultadoImagen.src = "imagen1.PNG";
         document.getElementById("imagen").src = resultadoImagen.src;
-    } else if (resultado > 3 && resultado < 5) {
+    } else if (resultado > 1.5 && resultado < 2.5) {
         document.getElementById("resultado").innerText = "Su riesgo es medio - medio " + resultado + " Te recomendamos consultar con tu Psicólogo";
         resultadoImagen.src = "imagen2.PNG";
         document.getElementById("imagen").src = resultadoImagen.src;
