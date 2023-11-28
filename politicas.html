@@ -17,6 +17,7 @@
         /* Ajusta estilos del botón para que ocupe toda la fila */
         #aceptarButton {
             grid-column: 1 / span 2;
+            /* Agrega estilos adicionales según sea necesario */
         }
 
         /* Ajusta el estilo del textarea */
@@ -26,6 +27,12 @@
             resize: vertical; /* Permite la redimensión vertical */
             overflow-y: scroll; /* Agrega una barra de desplazamiento vertical */
             text-align: justify;
+            /* Agrega estilos adicionales según sea necesario */
+        }
+
+        /* Estilo del checkbox */
+        #aceptarCheckbox {
+            margin-bottom: 10px; /* Espaciado inferior para separar del textarea */
         }
     </style>
     <title>MENTAL INFO </title>
@@ -34,35 +41,52 @@
 <body>
 
     <div class="container" id="container">
-        
+
         <div class="form-container sign-in">
             <form>
                 <h1><center>Políticas de seguridad</center></h1>
                 <div class="social-icons">
-            
+                    <!-- Puedes agregar iconos o elementos adicionales aquí -->
                 </div>
-                
-                <textarea placeholder="Lea y acepte nuestras políticas de seguridad">La Constitución Política de Colombia en su artículo 15 establece que «Todas las personas tienen derecho a su intimidad personal y familiar y a su buen nombre, y el Estado debe respetarlos y hacerlos respetar. De igual modo, tienen derecho a conocer, actualizar y rectificar las informaciones que se hayan recogido sobre ellas en bancos de datos y en archivos de entidades públicas y privadas». El Gobierno nacional expidió la Ley 1581 de 2012, la cual regula la recolección y el tratamiento de datos personales efectuado por entidades públicas o privadas, dentro del país o cuando el responsable o encargado de la información no está establecido en el territorio nacional, le sea aplicable la legislación colombiana en virtud de normas y tratados internacionales. Mediante Sentencia C-748 del 6 de octubre de 2011, la Corte Constitucional declaró exequible el Proyecto de ley Estatutaria número 184 de 2010 Senado, 046 de 2010 Cámara. En el Decreto 1074 de 2015, Único Reglamentario del Sector Comercio, Industria y Turismo, en su capítulo 25, mediante el cual se reglamenta la Ley 1589 de 2012, establece los objetivos y aspectos relacionados con la autorización del titular de la información, las políticas de tratamiento de los responsables y encargados, el ejercicio de los derechos de los titulares de la información, las transferencias de datos personales y la responsabilidad demostrada frente al tratamiento de datos personales. Con el fin de facilitar la implementación y cumplimiento de la Ley 1581 de 2012 y del Decreto 1074 de 2015, se debe definir en el MEN aspectos relacionados con la autorización del titular de información para el tratamiento de sus datos personales, las políticas de tratamiento de los responsables y encargados, el ejercicio de los derechos de los titulares de información, las transferencias de datos personales y la responsabilidad frente al tratamiento de estos. Con base en lo anterior, se establece la política y lineamientos para la seguridad de la información y para el tratamiento y confidencialidad de datos personales que maneja el MEN.
+
+                <!-- Checkbox para aceptar términos y condiciones -->
+                <input type="checkbox" id="aceptarCheckbox">
+                <label for="aceptarCheckbox">Acepto los términos y condiciones</label>
+
+                <textarea placeholder="Lea y acepte nuestras políticas de seguridad">
+                    <!-- Contenido del textarea -->
                 </textarea>
-                
+
+                <!-- Cambiado de botón a checkbox -->
+                <label for="aceptarCheckbox">
+                    <div class="toggle-container">
+                        <div class="politica">
+                            <div class="toggle-panel toggle-right">
+                                <img src="Buho.png" alt="Info Mental Image" style="width: 50%; max-width: 300px; margin-bottom: 20px;">
+                                <h1>INFO MENTAL!</h1>
+                                <p>TU INFORMACIÓN SERÁ USADA PARA RECOMENDACIONES FUTURAS</p>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Botón de envío -->
+                <button type="submit" id="aceptarButton" disabled>Aceptar</button>
             </form>
         </div>
-        <div class="toggle-container">
-            <div class="politica">
-                <div class="toggle-panel toggle-right">
-                    <img src="Buho.png" alt="Info Mental Image" style="width: 50%; max-width: 300px; margin-bottom: 20px;">
-                    <h1>INFO MENTAL!</h1>
-                    <p>TU INFORMACIÓN SERÁ USADA PARA RECOMENDACIONES FUTURAS</p>
-                    <button class="hidden" id="aceptarButton">ACEPTAR</button>
-                </div>
-            </div>
-        </div>
+
     </div>
 
     <script src="script.js"></script>
     <script>
-        document.getElementById('aceptarButton').addEventListener('click', function() {
-            window.location.href = 'Filtro.html';
+        // Obtén el checkbox y el botón
+        var checkbox = document.getElementById('aceptarCheckbox');
+        var botonAceptar = document.getElementById('aceptarButton');
+
+        // Agrega un event listener al checkbox
+        checkbox.addEventListener('change', function () {
+            // Habilita o deshabilita el botón según el estado del checkbox
+            botonAceptar.disabled = !checkbox.checked;
         });
     </script>
 </body>
