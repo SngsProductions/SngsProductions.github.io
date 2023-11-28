@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>MENTAL INFO </title>
-    
+
     <style>
         /* Agrega estilos de cuadrícula */
         .form-container {
@@ -15,7 +15,6 @@
             grid-template-columns: 1fr;
             gap: 10px;
         }
-
 
         /* Ajusta estilos del botón para que ocupe toda la fila */
         #aceptarButton {
@@ -31,21 +30,21 @@
             text-align: justify;
         }
     </style>
-    
+
 </head>
 
 <body>
 
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form  method="get" action="Filtro.html">
+            <form method="get" action="Filtro.html" id="inicioForm">
                 <h1>INGRESO</h1>
                 <div class="social-icons">
                 </div>
                 <span>Usa tus datos personales</span>
-               <input type="text" placeholder="Name" pattern="[\p{L}\s]+" name="nombre" required>
-                    
-                <button name ="Agregar">INICIAR</button>
+                <input type="text" placeholder="Name" pattern="[\p{L}\s]+" name="nombre" required>
+
+                <button name="Agregar" id="iniciarButton">INICIAR</button>
             </form>
         </div>
         <div class="form-container sign-in">
@@ -53,15 +52,18 @@
                 <h1>POLÍTICAS DE SEGURIDAD</h1>
                 <div class="social-icons">
                 </div>
-      
+
                 <div class="social-icons">
-            
+
                 </div>
-                
-                <textarea placeholder="Lea y acepte nuestras políticas de seguridad">La Constitución Política de Colombia en su artículo 15 establece que «Todas las personas tienen derecho a su intimidad personal y familiar y a su buen nombre, y el Estado debe respetarlos y hacerlos respetar. De igual modo, tienen derecho a conocer, actualizar y rectificar las informaciones que se hayan recogido sobre ellas en bancos de datos y en archivos de entidades públicas y privadas». El Gobierno nacional expidió la Ley 1581 de 2012, la cual regula la recolección y el tratamiento de datos personales efectuado por entidades públicas o privadas, dentro del país o cuando el responsable o encargado de la información no está establecido en el territorio nacional, le sea aplicable la legislación colombiana en virtud de normas y tratados internacionales. Mediante Sentencia C-748 del 6 de octubre de 2011, la Corte Constitucional declaró exequible el Proyecto de ley Estatutaria número 184 de 2010 Senado, 046 de 2010 Cámara. En el Decreto 1074 de 2015, Único Reglamentario del Sector Comercio, Industria y Turismo, en su capítulo 25, mediante el cual se reglamenta la Ley 1589 de 2012, establece los objetivos y aspectos relacionados con la autorización del titular de la información, las políticas de tratamiento de los responsables y encargados, el ejercicio de los derechos de los titulares de la información, las transferencias de datos personales y la responsabilidad demostrada frente al tratamiento de datos personales. Con el fin de facilitar la implementación y cumplimiento de la Ley 1581 de 2012 y del Decreto 1074 de 2015, se debe definir en el MEN aspectos relacionados con la autorización del titular de información para el tratamiento de sus datos personales, las políticas de tratamiento de los responsables y encargados, el ejercicio de los derechos de los titulares de información, las transferencias de datos personales y la responsabilidad frente al tratamiento de estos. Con base en lo anterior, se establece la política y lineamientos para la seguridad de la información y para el tratamiento y confidencialidad de datos personales que maneja el MEN.
+
+                <textarea placeholder="Lea y acepte nuestras políticas de seguridad" style="height: 200px; resize: none;">La Constitución Política de Colombia en su artículo 15 establece que «Todas las personas tienen derecho a su intimidad personal y familiar y a su buen nombre, y el Estado debe respetarlos y hacerlos respetar. De igual modo, tienen derecho a conocer, actualizar y rectificar las informaciones que se hayan recogido sobre ellas en bancos de datos y en archivos de entidades públicas y privadas». El Gobierno nacional expidió la Ley 1581 de 2012, la cual regula la recolección y el tratamiento de datos personales efectuado por entidades públicas o privadas, dentro del país o cuando el responsable o encargado de la información no está establecido en el territorio nacional, le sea aplicable la legislación colombiana en virtud de normas y tratados internacionales. Mediante Sentencia C-748 del 6 de octubre de 2011, la Corte Constitucional declaró exequible el Proyecto de ley Estatutaria número 184 de 2010 Senado, 046 de 2010 Cámara. En el Decreto 1074 de 2015, Único Reglamentario del Sector Comercio, Industria y Turismo, en su capítulo 25, mediante el cual se reglamenta la Ley 1589 de 2012, establece los objetivos y aspectos relacionados con la autorización del titular de la información, las políticas de tratamiento de los responsables y encargados, el ejercicio de los derechos de los titulares de la información, las transferencias de datos personales y la responsabilidad demostrada frente al tratamiento de datos personales. Con el fin de facilitar la implementación y cumplimiento de la Ley 1581 de 2012 y del Decreto 1074 de 2015, se debe definir en el MEN aspectos relacionados con la autorización del titular de información para el tratamiento de sus datos personales, las políticas de tratamiento de los responsables y encargados, el ejercicio de los derechos de los titulares de la información, las transferencias de datos personales y la responsabilidad frente al tratamiento de estos. Con base en lo anterior, se establece la política y lineamientos para la seguridad de la información y para el tratamiento y confidencialidad de datos personales que maneja el MEN.
+
                 </textarea>
-             
-               <button id='miButton'></button>
+
+                <input type="checkbox" id="aceptarCheckbox" required>
+                <label for="aceptarCheckbox">Acepto los términos y condiciones</label>
+
             </form>
         </div>
         <div class="toggle-container">
@@ -83,10 +85,26 @@
     </div>
 
     <script src="script.js"></script>
-    
+    <script>
+        // Manejo del clic en el botón con id "register"
+        document.getElementById('register').addEventListener('click', function () {
+            // Verifica si el checkbox está marcado
+            if (document.getElementById('aceptarCheckbox').checked) {
+                // Verifica si el campo de nombre no está vacío
+                if (document.getElementsByName('nombre')[0].value.trim() !== "") {
+                    // Redirige a la página Filtro.html
+                    window.location.href = 'Filtro.html';
+                } else {
+                    // Muestra un mensaje si el campo de nombre está vacío
+                    alert('Por favor, ingresa tu nombre antes de continuar.');
+                }
+            } else {
+                // Muestra un mensaje si el checkbox no está marcado
+                alert('Por favor, acepta los términos y condiciones antes de continuar.');
+            }
+        });
+    </script>
+
 </body>
 
 </html>
-
-
-
